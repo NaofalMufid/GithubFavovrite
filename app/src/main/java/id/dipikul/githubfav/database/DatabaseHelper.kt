@@ -19,11 +19,11 @@ internal class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATAB
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db?.execSQL(SQL_CREATE_TABLE_FAV)
+        db.execSQL(SQL_CREATE_TABLE_FAV)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
 }

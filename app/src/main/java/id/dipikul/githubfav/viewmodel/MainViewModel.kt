@@ -33,11 +33,12 @@ class MainViewModel: ViewModel() {
                     val item = responseObjects.getJSONArray("items")
                     for (i in 0 until item.length()){
                         val user = item.getJSONObject(i)
-                        var userModel = UserModel()
+                        val userModel = UserModel()
                         userModel.login = user.getString("login")
                         userModel.avatar = user.getString("avatar_url")
                         listItems.add(userModel)
                     }
+                    listGitSearch.postValue(listItems)
                 }catch (e: Exception){
                     Log.d("Exception", e.message.toString())
                 }

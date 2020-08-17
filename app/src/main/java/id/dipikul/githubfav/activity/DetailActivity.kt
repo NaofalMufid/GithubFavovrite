@@ -119,7 +119,7 @@ class DetailActivity : AppCompatActivity() {
         when(item.itemId){
             R.id.add_favorite -> setFavorite()
         }
-        return super.onOptionsItemSelected(item)
+        return true
     }
 
     private fun setFavorite() {

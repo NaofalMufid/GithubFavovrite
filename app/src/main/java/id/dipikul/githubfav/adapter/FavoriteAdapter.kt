@@ -57,7 +57,8 @@ class FavoriteAdapter(private val activity: Activity): RecyclerView.Adapter<Favo
         fun bind(userModel: UserModel){
             with(itemView){
                 Glide.with(itemView.context)
-                    .load(RequestOptions.placeholderOf(R.drawable.refresh_black))
+                    .load(userModel.avatar)
+                    .apply(RequestOptions.placeholderOf(R.drawable.refresh_black))
                     .error(R.drawable.broken_image_black)
                     .into(img_item_user)
                 tv_item_username.text = userModel.login

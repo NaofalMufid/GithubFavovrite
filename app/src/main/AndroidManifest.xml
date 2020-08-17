@@ -18,6 +18,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <provider
+            android:authorities="id.dipikul.githubfav"
+            android:name=".provider.MyContentProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="id.dipikul.githubfav.READ_DATABASE"
+            android:writePermission="id.dipikul.githubfav.WRITE_DATABASE"/>
+
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.FavoriteActivity" />
         <activity android:name=".activity.DetailActivity" />
